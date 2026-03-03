@@ -59,10 +59,11 @@ app.use((req, res) => {
 // 5. KHỞI ĐỘNG SERVER
 // -------------------------------------------------------------------
 
-if (process.env.NODE_ENV !== "production") {
-  const PORT = process.env.PORT || 5000; // Force restart for debug route
-  app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
-}
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on port ${PORT}`);
+});
 
 // Forced restart for schema update
 export default app;
