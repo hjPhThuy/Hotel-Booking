@@ -17,6 +17,8 @@ Admin:
 - Email: admin@admin.com
 - Password: 123456
 ---
+⚠️ NOTE: Backend is hosted on Render (free tier). 
+It may take up to 30 seconds to wake up after inactivity.
 
 ## 📌 Project Overview
 
