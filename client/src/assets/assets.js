@@ -10,7 +10,10 @@ import instagramIcon from './instagramIcon.svg'
 import facebookIcon from './facebookIcon.svg'
 import twitterIcon from './twitterIcon.svg'
 import linkendinIcon from './linkendinIcon.svg'
+import googleIcon from './googleIcon.svg' // Import Google Icon
 import freeWifiIcon from './freeWifiIcon.svg'
+// ...
+
 import freeBreakfastIcon from './freeBreakfastIcon.svg'
 import roomServiceIcon from './roomServiceIcon.svg'
 import mountainIcon from './mountainIcon.svg'
@@ -37,7 +40,15 @@ import listIcon from "./listIcon.svg";
 import uploadArea from "./uploadArea.svg";
 import totalBookingIcon from "./totalBookingIcon.svg";
 import totalRevenueIcon from "./totalRevenueIcon.svg";
-
+import heroImage from "./heroImage.png";
+import cancelIcon from "./cancel.svg";
+import carIcon from "./car.svg";
+import iconReceptionist from "./receptionist.svg";
+import barIcon from "./bar-11.svg";
+import spaIcon from "./spa.svg";
+import balconyIcon from "./balcony-rounded.svg";
+import waiterIcon from "./waiter.svg";
+import qrcode from "./qr.jpg"
 
 export const assets = {
     logo,
@@ -52,6 +63,7 @@ export const assets = {
     facebookIcon,
     twitterIcon,
     linkendinIcon,
+    googleIcon,
     freeWifiIcon,
     freeBreakfastIcon,
     roomServiceIcon,
@@ -72,6 +84,24 @@ export const assets = {
     uploadArea,
     totalBookingIcon,
     totalRevenueIcon,
+    heroImage,
+    cancelIcon,
+    carIcon,
+    iconReceptionist,
+    barIcon,
+    spaIcon,
+    balconyIcon,
+    waiterIcon,
+    qrcode,
+    qr: qrcode
+}
+
+export const avatars = {
+    avt1: userIcon,
+    avt2: userIcon,
+    avt3: userIcon,
+    banner: heroImage,
+    qr: qrcode
 }
 
 export const cities = [
@@ -79,6 +109,22 @@ export const cities = [
     "Hồ Chí Minh",
     "Huế",
     "Đà Nẵng",
+    "Hội An",
+    "Nha Trang",
+    "Đà Lạt",
+    "Hà Nội",
+    "Cần Thơ",
+    "Hạ Long",
+    "Bình Định",
+    "Đồng Nai",
+    "ĐăkLăk",
+    "Phú Yên",
+    "Thái Nguyên",
+    "Vũng Tàu",
+    "Bình Thuận",
+    "Bình Dương",
+    "Bình Phước",
+
 ];
 
 // Exclusive Offers Dummy Data
@@ -90,7 +136,7 @@ export const exclusiveOffers = [
 
 // Testimonials Dummy Data
 export const testimonials = [
-    { id: 1, name: "Nguyễn Đức Duy", address: "Tp Hồ Chí Minh", image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200", rating: 5, review:"Tìm được một khách sạn ưng ý ở Đà Lạt cho chuyến đi gia đình chưa bao giờ dễ dàng đến thế! Giao diện QuickStay rất thân thiện, thông tin rõ ràng và tôi đã có một kỳ nghỉ tuyệt vời với mức giá rất hợp lý." },
+    { id: 1, name: "Nguyễn Đức Duy", address: "Tp Hồ Chí Minh", image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200", rating: 5, review: "Tìm được một khách sạn ưng ý ở Đà Lạt cho chuyến đi gia đình chưa bao giờ dễ dàng đến thế! Giao diện QuickStay rất thân thiện, thông tin rõ ràng và tôi đã có một kỳ nghỉ tuyệt vời với mức giá rất hợp lý." },
     { id: 2, name: "Đàm Quốc Khánh", address: "Đà Nẵng", image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200", rating: 4, review: "QuickStay vượt ngoài mong đợi của tôi. Quy trình đặt phòng diễn ra cực kỳ suôn sẻ, và các khách sạn đều là hàng đầu. Rất nên dùng!" },
     { id: 3, name: "Lâm Nguyễn Phương Thùy", address: "Đồng Nai", image: "https://images.unsplash.com/photo-1701615004837-40d8573b6652?q=80&w=200", rating: 5, review: "Thường xuyên du lịch cuối tuần, tôi rất cần một nền tảng tìm kiếm nhanh. QuickStay cung cấp thông tin chi tiết và ảnh chụp thực tế rất rõ ràng, giúp tôi yên tâm chọn được resort ưng ý ở Phan Thiết. Quy trình thanh toán cũng cực kỳ tiện lợi!" }
 ];
@@ -102,14 +148,23 @@ export const facilityIcons = {
     "Dịch vụ phòng": assets.roomServiceIcon,
     "Khung cảnh đẹp": assets.mountainIcon,
     "Hồ bơi": assets.poolIcon,
+    "Hủy phòng miễn phí": assets.cancelIcon,
+    "Xe đưa đón miễn phí": assets.carIcon,
+    "Lễ tân 24h": assets.waiterIcon,
+    "Quầy bar": assets.barIcon,
+    "Spa & Chăm sóc sức khỏe": assets.spaIcon,
+
+    "Ban công": balconyIcon,
+    "Ban công ": balconyIcon, // Fix for legacy data with trailing space
+
 };
 
 // For Room Details Page
 export const roomCommonData = [
-   { icon: assets.homeIcon, title: "Nơi ở Sạch & An Toàn", description: "Không gian được duy trì tốt và vệ sinh chỉ dành cho bạn." },
-   { icon: assets.badgeIcon, title: "Vệ Sinh Nâng Cao", description: "Chủ nhà này tuân thủ các tiêu chuẩn vệ sinh nghiêm ngặt của Staybnb." },
-   { icon: assets.locationFilledIcon, title: "Vị Trí Tuyệt Vời", description: "90% khách đánh giá vị trí 5 sao." },
-   { icon: assets.heartIcon, title: "Nhận Phòng Thuận Tiện", description: "100% khách đánh giá nhận phòng 5 sao." },
+    { icon: assets.homeIcon, title: "Nơi ở Sạch & An Toàn", description: "Không gian được duy trì tốt và vệ sinh chỉ dành cho bạn." },
+    { icon: assets.badgeIcon, title: "Vệ Sinh Nâng Cao", description: "Chủ nhà này tuân thủ các tiêu chuẩn vệ sinh nghiêm ngặt của Staybnb." },
+    { icon: assets.locationFilledIcon, title: "Vị Trí Tuyệt Vời", description: "90% khách đánh giá vị trí 5 sao." },
+    { icon: assets.heartIcon, title: "Nhận Phòng Thuận Tiện", description: "100% khách đánh giá nhận phòng 5 sao." },
 ];
 
 // User Dummy Data
@@ -127,70 +182,107 @@ export const userDummyData = {
     ]
 }
 
-// Hotel Dummy Data
-export const hotelDummyData =  
-    {
-    "_id": "67f76393197ac559e4089b72",
-    "name": "Phú Quốc Ocean View",
-    "address": "Đường Trần Hưng Đạo, Dương Đông, Phú Quốc",
-    "contact": "+0123456789",
-    "owner": userDummyData,
-    "city": "Kiên Giang",
-    "createdAt": "2025-04-10T06:22:11.663Z",
-    "updatedAt": "2025-04-10T06:22:11.663Z",
+// Hotel Dummy Data Common
+const ownerDummy = userDummyData;
+
+export const hotelDummyData1 = {
+    "_id": "hotel_1_pq",
+    "name": "Vinpearl Resort & Spa Phú Quốc",
+    "address": "Bãi Dài, Gành Dầu, Phú Quốc, Kiên Giang",
+    "contact": "0297 3550 550",
+    "owner": ownerDummy,
+    "city": "Phú Quốc",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
     "__v": 0
-}
+};
 
+export const hotelDummyData2 = {
+    "_id": "hotel_2_nt",
+    "name": "Sheraton Nha Trang Hotel & Spa",
+    "address": "26-28 Trần Phú, Lộc Thọ, Nha Trang, Khánh Hòa",
+    "contact": "0258 3880 000",
+    "owner": ownerDummy,
+    "city": "Nha Trang",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "__v": 0
+};
 
+export const hotelDummyData3 = {
+    "_id": "hotel_3_dl",
+    "name": "Dalat Palace Heritage Hotel",
+    "address": "2 Đường Trần Phú, Phường 3, Thành phố Đà Lạt, Lâm Đồng",
+    "contact": "0263 3825 444",
+    "owner": ownerDummy,
+    "city": "Đà Lạt",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "__v": 0
+};
+
+export const hotelDummyData4 = {
+    "_id": "hotel_4_dn",
+    "name": "InterContinental Danang Sun Peninsula Resort",
+    "address": "Bãi Bắc, Bán đảo Sơn Trà, Đà Nẵng",
+    "contact": "0236 3938 888",
+    "owner": ownerDummy,
+    "city": "Đà Nẵng",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "__v": 0
+};
+
+export const hotelDummyData = hotelDummyData1; // Keep for backward compatibility if used elsewhere
 
 // Rooms Dummy Data
 export const roomsDummyData = [
     {
-        "_id": "67f7647c197ac559e4089b96",
-        "hotel": hotelDummyData,
-        "roomType": "Double Bed",
-        "pricePerNight": 399,
-        "amenities": ["Room Service", "Mountain View", "Pool Access"],
+        "_id": "room_1_pq",
+        "hotel": hotelDummyData1,
+        "roomType": "Ocean View Villa",
+        "pricePerNight": 4500000,
+        "amenities": ["Hồ bơi riêng", "View biển", "Dịch vụ phòng 24/7"],
         "images": [roomImg1, roomImg2, roomImg3, roomImg4],
         "isAvailable": true,
-        "createdAt": "2025-04-10T06:26:04.013Z",
-        "updatedAt": "2025-04-10T06:26:04.013Z",
+        "createdAt": "2025-01-01T00:00:00.000Z",
+        "updatedAt": "2025-01-01T00:00:00.000Z",
         "__v": 0
     },
     {
-        "_id": "67f76452197ac559e4089b8e",
-        "hotel": hotelDummyData,
-        "roomType": "Double Bed",
-        "pricePerNight": 299,
-        "amenities": ["Room Service", "Mountain View", "Pool Access"],
+        "_id": "room_2_nt",
+        "hotel": hotelDummyData2,
+        "roomType": "Premium Ocean View",
+        "pricePerNight": 3200000,
+        "amenities": ["Spa", "View biển", "Gym"],
         "images": [roomImg2, roomImg3, roomImg4, roomImg1],
         "isAvailable": true,
-        "createdAt": "2025-04-10T06:25:22.593Z",
-        "updatedAt": "2025-04-10T06:25:22.593Z",
+        "createdAt": "2025-01-01T00:00:00.000Z",
+        "updatedAt": "2025-01-01T00:00:00.000Z",
         "__v": 0
     },
     {
-        "_id": "67f76406197ac559e4089b82",
-        "hotel": hotelDummyData,
-        "roomType": "Double Bed",
-        "pricePerNight": 249,
-        "amenities": ["Free WiFi", "Free Breakfast", "Room Service"],
+        "_id": "room_3_dl",
+        "hotel": hotelDummyData3,
+        "roomType": "Heritage Suite",
+        "pricePerNight": 2800000,
+        "amenities": ["Lò sưởi", "Vườn Thượng Uyển", "Trà chiều"],
         "images": [roomImg3, roomImg4, roomImg1, roomImg2],
         "isAvailable": true,
-        "createdAt": "2025-04-10T06:24:06.285Z",
-        "updatedAt": "2025-04-10T06:24:06.285Z",
+        "createdAt": "2025-01-01T00:00:00.000Z",
+        "updatedAt": "2025-01-01T00:00:00.000Z",
         "__v": 0
     },
     {
-        "_id": "67f763d8197ac559e4089b7a",
-        "hotel": hotelDummyData,
-        "roomType": "Single Bed",
-        "pricePerNight": 199,
-        "amenities": ["Free WiFi", "Room Service", "Pool Access"],
+        "_id": "room_4_dn",
+        "hotel": hotelDummyData4,
+        "roomType": "Son Tra Terrace Suite",
+        "pricePerNight": 8500000,
+        "amenities": ["Bãi biển riêng", "Nhà hàng La Maison 1888", "Spa"],
         "images": [roomImg4, roomImg1, roomImg2, roomImg3],
         "isAvailable": true,
-        "createdAt": "2025-04-10T06:23:20.252Z",
-        "updatedAt": "2025-04-10T06:23:20.252Z",
+        "createdAt": "2025-01-01T00:00:00.000Z",
+        "updatedAt": "2025-01-01T00:00:00.000Z",
         "__v": 0
     }
 ]

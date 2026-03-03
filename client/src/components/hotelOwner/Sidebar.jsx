@@ -4,13 +4,15 @@ import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
     const sidebarlinks =[
-        {name: "Dashboard", path:"/owner", icon: assets.dashboardIcon},
-        {name: "Add Room", path:"/owner/add-room", icon: assets.addIcon},
-        {name: "List Room", path:"/owner/list-room", icon: assets.listIcon},
+        {name: "Bảng điều khiển", path:"/owner", icon: assets.dashboardIcon},
+        {name: "Thêm phòng", path:"/owner/add-room", icon: assets.addIcon},
+        {name: "Danh sách phòng", path:"/owner/list-room", icon: assets.listIcon},
+        {name: "Quản lý yêu cầu đặt phòng", path:"/owner/consultations", icon: assets.listIcon},
+        {name: "Chăm sóc khách hàng", path:"/owner/customer-care", icon: assets.listIcon},
     ]
 
   return (
-    <div className='md:w-54 w-16 border-r h-full text-base border-gray-300 pt-4
+    <div className='md:w-58 w-16 border-r h-full text-base border-gray-300 pt-4
     flex flex-col transition-all duration-300'>
         {sidebarlinks.map((item, index)=>(
             <NavLink to={item.path} key={index} end='/owner' className={({isActive})=>

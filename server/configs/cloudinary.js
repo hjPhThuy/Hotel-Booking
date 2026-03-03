@@ -1,15 +1,12 @@
-// làm vào .env
-// CLOUDINARY_CLIUD_NAME=dauowu2zq
-// CLOUDINARY_API_KEY=554212541579357
-// CLOUDINARY_API_SECRET=zwXyrogPDgmrwPW_T_PFkNLlUPQ
+
 
 
 
 import { v2 as cloudinary } from "cloudinary";
 
-const connectCloudinary = async () =>{
+const connectCloudinary = async () => {
     cloudinary.config({
-        cloud_name: process.env.CLOUDINARY_CLIUD_NAME,
+        cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
         api_key: process.env.CLOUDINARY_API_KEY,
         api_secret: process.env.CLOUDINARY_API_SECRET,
 
