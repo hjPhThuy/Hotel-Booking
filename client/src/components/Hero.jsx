@@ -15,7 +15,10 @@ const Hero = () => {
     }
 
     return (
-        <div className=' flex flex-col items-start justify-center px-6 md:px-16 lg:px-24 xl:px-32 text-white bg-[url("/src/assets/heroImage.png")] bg-no-repeat bg-cover bg-center h-screen'>
+        <div 
+            className=' flex flex-col items-start justify-center px-6 md:px-16 lg:px-24 xl:px-32 text-white bg-no-repeat bg-cover bg-center h-screen'
+            style={{ backgroundImage: `url(${assets.heroImage})` }}
+        >
             <p className='bg-[#49B9FF]/50 px-3.5 py-1 rounded-full mt-20'>Hành trình của bạn bắt đầu từ đây. Hàng ngàn lựa chọn lưu trú cao cấp đang chờ đón</p>
             <h1 className='font-Playfair text-2x1 md:text-5x1 md:text-[56px] md:leading-14 font-bold md:font-extrabold max-w-xl mt-4'>Khám Phá & Đặt Ngay </h1>
             <p className='max-w-130 mt-2 text-sm md:text-base'>QuickStay mang đến cho bạn bộ sưu tập những nơi nghỉ dưỡng tinh hoa và độc đáo nhất. Từ các khách sạn 5 sao lộng lẫy đến những khu nghỉ dưỡng biệt lập, chúng tôi cam kết biến chuyến đi của bạn thành một trải nghiệm đáng nhớ. Hãy bắt đầu hành trình của sự thư thái và khám phá ngay hôm nay! </p>

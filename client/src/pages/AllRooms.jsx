@@ -186,7 +186,7 @@ const AllRooms = () => {
       <div className="pt-20">
       {/* Featured Section */}
       <div className="relative h-[400px] mb-12">
-        <img src="/src/assets/heroImage.png" className="w-full h-full object-cover" />
+        <img src={assets.heroImage} className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white text-center px-4">
           <h1 className="text-4xl md:text-6xl font-playfair font-bold mb-4">Khám Phá Kỳ Nghỉ Mơ Ước</h1>
           <p className="text-lg md:text-xl max-w-2xl">Trải nghiệm sự sang trọng và tiện nghi đẳng cấp tại các khách sạn hàng đầu của chúng tôi.</p>
