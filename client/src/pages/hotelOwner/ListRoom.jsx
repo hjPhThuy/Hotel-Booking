@@ -12,7 +12,7 @@ const ListRoom = () => {
 
   const fetchRooms = async () => {
       try {
-          const { data } = await axios.get('/api/rooms/owner', {
+          const { data } = await axios.get('${import.meta.env.VITE_API_URL}/api/rooms/owner', {
               headers: { Authorization: `Bearer ${token}` }
           });
           if (data.success) {
@@ -32,7 +32,7 @@ const ListRoom = () => {
 
   const handleToggleAvailability = async (roomId) => {
       try {
-          const { data } = await axios.post('/api/rooms/toggle-availability', { roomId }, {
+          const { data } = await axios.post('${import.meta.env.VITE_API_URL}/api/rooms/toggle-availability', { roomId }, {
               headers: { Authorization: `Bearer ${token}` }
           });
           if (data.success) {
@@ -49,7 +49,7 @@ const ListRoom = () => {
   const handleDeleteRoom = async (id) => {
     if(!window.confirm("Bạn có chắc chắn muốn xóa phòng này?")) return;
     try {
-        const { data } = await axios.post('/api/rooms/delete', { id }, {
+        const { data } = await axios.post('${import.meta.env.VITE_API_URL}/api/rooms/delete', { id }, {
             headers: { Authorization: `Bearer ${token}` }
         });
         if (data.success) {

@@ -32,7 +32,7 @@ const Profile = () => {
     const handleSave = async () => {
         try {
             // Use JSON instead of FormData since we are not uploading files anymore
-            const { data } = await axios.post('/api/users/profile', { username, phone, address }, {
+            const { data } = await axios.post('${import.meta.env.VITE_API_URL}/api/users/profile', { username, phone, address }, {
                  headers: { 
                     Authorization: `Bearer ${localStorage.getItem('token')}`
                  }

@@ -39,7 +39,7 @@ const AllRooms = () => {
 
   const fetchRooms = async () => {
     try {
-        const { data } = await axios.get('/api/rooms');
+        const { data } = await axios.get('${import.meta.env.VITE_API_URL}/api/rooms');
         if (data.success) {
             setAllRooms(data.rooms);
             setFilteredRooms(data.rooms);

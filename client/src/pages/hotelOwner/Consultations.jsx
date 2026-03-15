@@ -13,7 +13,7 @@ const Consultations = () => {
 
     const fetchConsultations = async () => {
         try {
-            const { data } = await axios.get('/api/bookings/hotel', { headers: { Authorization: `Bearer ${token}` } })
+            const { data } = await axios.get('${import.meta.env.VITE_API_URL}/api/bookings/hotel', { headers: { Authorization: `Bearer ${token}` } })
             if (data.success) {
                 setConsultations(data.bookings)
             } else {
@@ -27,7 +27,7 @@ const Consultations = () => {
     const handleDelete = async (id) => {
         if(!window.confirm("Bạn có chắc chắn muốn xóa yêu cầu này?")) return;
         try {
-            const { data } = await axios.post('/api/bookings/delete', { id }, { headers: { Authorization: `Bearer ${token}` } })
+            const { data } = await axios.post('${import.meta.env.VITE_API_URL}/api/bookings/delete', { id }, { headers: { Authorization: `Bearer ${token}` } })
             if (data.success) {
                 toast.success(data.message)
                 fetchConsultations(); // Refresh list
@@ -41,7 +41,7 @@ const Consultations = () => {
 
     const handleConfirm = async (id) => {
         try {
-            const { data } = await axios.post('/api/bookings/confirm', { id }, { headers: { Authorization: `Bearer ${token}` } })
+            const { data } = await axios.post('${import.meta.env.VITE_API_URL}/api/bookings/confirm', { id }, { headers: { Authorization: `Bearer ${token}` } })
             if (data.success) {
                 toast.success(data.message)
                 fetchConsultations()
@@ -55,7 +55,7 @@ const Consultations = () => {
 
     const handleMarkPaid = async (id) => {
         try {
-            const { data } = await axios.post('/api/bookings/mark-paid', { id }, { headers: { Authorization: `Bearer ${token}` } })
+            const { data } = await axios.post('${import.meta.env.VITE_API_URL}/api/bookings/mark-paid', { id }, { headers: { Authorization: `Bearer ${token}` } })
             if (data.success) {
                 toast.success(data.message)
                 fetchConsultations()

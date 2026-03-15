@@ -19,7 +19,7 @@ const Dashboard = () => {
 
     const fetchDashboardData = async () => {
         try {
-            const { data } = await axios.get('/api/bookings/hotel', { headers: { Authorization: `Bearer ${token}` } })
+            const { data } = await axios.get('${import.meta.env.VITE_API_URL}/api/bookings/hotel', { headers: { Authorization: `Bearer ${token}` } })
             if (data.success) {
                 setDashboardData({
                     totalBookings: data.totalBookings,
