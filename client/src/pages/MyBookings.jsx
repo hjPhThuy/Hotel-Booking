@@ -27,7 +27,7 @@ const MyBookings = () => {
         setBookings(data.bookings)
       } else {
         toast.error(data.message)
-      }
+      } 
     } catch (error) {
       toast.error(error.response?.data?.message || error.message)
     }
@@ -38,7 +38,7 @@ const MyBookings = () => {
       if(!window.confirm("Bạn có chắc chắn muốn hủy đơn đặt phòng này không?")) return;
       
       const token = await getToken()
-      const { data } = await axios.post('/api/bookings/cancel', { id }, {
+      const { data } = await axios.post('${import.meta.env.VITE_API_URL}/api/bookings/cancel', { id }, {
         headers: { Authorization: `Bearer ${token}` }
       })
       if (data.success) {
@@ -67,7 +67,7 @@ const MyBookings = () => {
         }
         
         const token = await getToken();
-        const { data } = await axios.post('/api/reviews/add', 
+        const { data } = await axios.post('${import.meta.env.VITE_API_URL}/api/reviews/add', 
             { bookingId: selectedBookingId, rating: reviewRating, comment: reviewComment },
             { headers: { Authorization: `Bearer ${token}` } }
         );

@@ -27,7 +27,7 @@ export const fetchUserProfile = createAsyncThunk(
             const { token } = getState().auth;
             if (!token) return rejectWithValue('No token found');
 
-            const { data } = await axios.get('/api/users', {
+            const { data } = await axios.get('${import.meta.env.VITE_API_URL}/api/users', {
                 headers: { Authorization: `Bearer ${token}` }
             });
 
