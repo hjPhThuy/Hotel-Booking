@@ -34,12 +34,12 @@ app.use(express.json());
 // 3. ĐỊNH NGHĨA CÁC ROUTE
 // -------------------------------------------------------------------
 
-app.use('${import.meta.env.VITE_API_URL}/api/auth', authRouter);
-app.use('${import.meta.env.VITE_API_URL}/api/users', userRouter);
-app.use('${import.meta.env.VITE_API_URL}/api/hotels', hotelRouter);
-app.use('${import.meta.env.VITE_API_URL}/api/rooms', roomRouter);
-app.use('${import.meta.env.VITE_API_URL}/api/bookings', bookingRouter);
-app.use('${import.meta.env.VITE_API_URL}/api/reviews', reviewRouter);
+app.use('https://hotel-booking-s1nh.onrender.com/api/auth', authRouter);
+app.use('https://hotel-booking-s1nh.onrender.com/api/users', userRouter);
+app.use('https://hotel-booking-s1nh.onrender.com/api/hotels', hotelRouter);
+app.use('https://hotel-booking-s1nh.onrender.com/api/rooms', roomRouter);
+app.use('https://hotel-booking-s1nh.onrender.com/api/bookings', bookingRouter);
+app.use('https://hotel-booking-s1nh.onrender.com/api/reviews', reviewRouter);
 
 app.get("/", (req, res) => {
   res.send("API đang hoạt động (Custom Auth Mode) 🚀");
