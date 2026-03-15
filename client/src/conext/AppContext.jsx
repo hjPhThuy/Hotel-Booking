@@ -5,7 +5,7 @@ import { Toaster, toast } from "react-hot-toast";
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchUserProfile, logout as reduxLogout, selectToken, selectUser, selectIsOwner } from "../redux/authSlice";
 
-axios.defaults.baseURL = "http://localhost:5000";
+axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 
 const AppContext = createContext();
 
