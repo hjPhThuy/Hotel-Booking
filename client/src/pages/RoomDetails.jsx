@@ -53,7 +53,7 @@ const RoomDetails = () => {
 
   const fetchRoomData = async () => {
     try {
-      const { data } = await axios.get('${import.meta.env.VITE_API_URL}/api/rooms')
+      const { data } = await axios.get('/api/rooms')
       const foundRoom = data.rooms.find(room => room._id === id)
       if (foundRoom) {
         setRoom(foundRoom)
@@ -66,7 +66,7 @@ const RoomDetails = () => {
 
   const fetchReviews = async () => {
     try {
-        const { data } = await axios.get('${import.meta.env.VITE_API_URL}/api/reviews/room/${id}')
+        const { data } = await axios.get(`/api/reviews/room/${id}`)
         if (data.success) {
             setReviews(data.reviews)
             // Calculate Average Rating
@@ -110,10 +110,9 @@ const RoomDetails = () => {
   const submitBooking = async () => {
     try {
         const token = await getToken();
-        // const headers = token ? { Authorization: `Bearer ${token}` } : {}; 
         const requestHeaders = token ? { Authorization: `Bearer ${token}` } : {};
 
-        const { data } = await axios.post('${import.meta.env.VITE_API_URL}/api/bookings/book', 
+        const { data } = await axios.post('/api/bookings/book', 
             { checkInDate, checkOutDate, room: room._id, guests, name, email, phone, paymentMethod: paymentMethod === 'online' ? 'online' : 'cash' },
             { headers: requestHeaders }
         )

@@ -6,7 +6,7 @@ export const loginUser = createAsyncThunk(
     'auth/loginUser',
     async ({ email, password }, { rejectWithValue }) => {
         try {
-            const { data } = await axios.post('${import.meta.env.VITE_API_URL}/api/auth/login', { email, password });
+            const { data } = await axios.post('/api/auth/login', { email, password });
             if (data.success) {
                 localStorage.setItem('token', data.token);
                 return { user: data.user, token: data.token };
@@ -27,7 +27,7 @@ export const fetchUserProfile = createAsyncThunk(
             const { token } = getState().auth;
             if (!token) return rejectWithValue('No token found');
 
-            const { data } = await axios.get('${import.meta.env.VITE_API_URL}/api/users', {
+            const { data } = await axios.get('/api/users', {
                 headers: { Authorization: `Bearer ${token}` }
             });
 

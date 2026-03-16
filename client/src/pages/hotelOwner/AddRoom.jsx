@@ -57,7 +57,7 @@ const AddRoom = () => {
   React.useEffect(() => {
      const fetchHotels = async () => {
          try {
-             const { data } = await axios.get('${import.meta.env.VITE_API_URL}/api/hotels/owner', {
+             const { data } = await axios.get('/api/hotels/owner', {
                  headers: { Authorization: `Bearer ${token}` }
              });
              if (data.success && data.hotels.length > 0) {
@@ -131,7 +131,7 @@ const AddRoom = () => {
          if(images[3]) formData.append('images', images[3]);
          if(images[4]) formData.append('images', images[4]);
 
-         const { data } = await axios.post('${import.meta.env.VITE_API_URL}/api/rooms', formData, {
+         const { data } = await axios.post('/api/rooms', formData, {
              headers: { Authorization: `Bearer ${token}` }
          });
 

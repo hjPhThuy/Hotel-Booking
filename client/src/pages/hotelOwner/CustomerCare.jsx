@@ -13,7 +13,7 @@ const CustomerCare = () => {
 
     const fetchReviews = async () => {
         try {
-            const { data } = await axios.get('${import.meta.env.VITE_API_URL}/api/reviews/all', { headers: { Authorization: `Bearer ${token}` } })
+            const { data } = await axios.get('/api/reviews/all', { headers: { Authorization: `Bearer ${token}` } })
             if (data.success) {
                 setReviews(data.reviews)
             } else {

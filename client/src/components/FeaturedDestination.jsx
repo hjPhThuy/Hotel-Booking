@@ -12,7 +12,7 @@ const FeaturedDestination = () => {
 
     const fetchRooms = async () => {
         try {
-            const { data } = await axios.get('${import.meta.env.VITE_API_URL}/api/rooms');
+            const { data } = await axios.get('/api/rooms');
             if (data.success) {
                 // Filter out rooms with missing hotel data and take first 4
                 const validRooms = data.rooms.filter(room => room.hotel).slice(0, 4);

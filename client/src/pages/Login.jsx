@@ -40,7 +40,7 @@ const Login = () => {
     } else {
       // Sign Up
       try {
-        const { data } = await axios.post('${import.meta.env.VITE_API_URL}/api/auth/register', { username: name, email, password });
+        const { data } = await axios.post('/api/auth/register', { username: name, email, password });
         if (data.success) {
            toast.success("Đăng ký thành công! Hãy đăng nhập.");
            setState('Login');

@@ -36,7 +36,7 @@ const HotelInfo = () => {
     const onSubmitHandler = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.post('${import.meta.env.VITE_API_URL}/api/hotels', { name, contact, address, city }, {
+            const { data } = await axios.post('/api/hotels', { name, contact, address, city }, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             if (data.success) {
